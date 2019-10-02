@@ -2,9 +2,14 @@
 
 {% block content %}
 <div style="text-align: center;">
-    <h1>Homepage</h1>
+    <h1 class="tim">Homepage</h1>
     <br>
     <a href="/page2">Page 2</a>
+    <br>
+    {{ hello }}<br>
+    {{ goodbye }}<br>
+    <button id="button" onclick="changeColor()">Change color</button>
 </div>
+
 {% endblock content %}
 

@@ -1,6 +1,14 @@
-<header style="background-color: blue;height: 5em;">
-    <a href="{% url 'hello' %}">Home</a> | <a href="{% url 'page2' %}">Page 2</a>
-</header>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load staticfiles %}
+        <script type="text/javascript" language="Javascript" src="{% static 'js/javascript.js' %}"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+    </head>
+    <header style="background-color: blue;height: 5em;">
+        <a href="{% url 'hello' %}">Home</a> | <a href="{% url 'page2' %}">Page 2</a>
+    </header>
 
-{% block content %}
-{% endblock %}
+    {% block content %}
+    {% endblock %}
+</html>
