@@ -37,7 +37,8 @@ class Page2PageView(TemplateView):
             "The future belongs to those who believe in the beauty of their dreams.",
             "Tell me and I forget. Teach me and I remember. Involve me and I learn."
         ]
-        num = random.randint(0,12)
+        num = random.randint(0,11)
+        print("------------>", num)
         context['quote'] = array[num]
         return context
 
