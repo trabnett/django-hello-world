@@ -3,6 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.http import HttpResponse
 from django.views.generic import TemplateView
+from pages import models
 
 import random
 
@@ -10,6 +11,10 @@ import random
 
 
 class HomePageView(TemplateView):
+    # person = models.Person.objects.create(name='tim', password='AAAAAA1!')
+    # person = models.Person.objects.filter(name='tim')
+    person = models.Person.objects.get(name='tim')
+    print(person.name, "=======", person.password)
     template_name = 'hello.html'
 
     def get_context_data(self, **kwargs):
