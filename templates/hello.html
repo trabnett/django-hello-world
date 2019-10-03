@@ -1,15 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div style="text-align: center;">
-    <h1 class="tim">Homepage</h1>
-    <br>
-    <a href="/page2">Page 2</a>
-    <br>
-    {{ hello }}<br>
-    {{ goodbye }}<br>
-    <button id="button" onclick="changeColor()">Change color</button>
-</div>
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <br>
+  <br>
+  <div style="text-align: center;">
+        <h1 class="tim">Homepage</h1>
+        <br>
+        <a href="/page2">Page 2</a>
+        <br>
+        {{ hello }}<br>
+        {{ goodbye }}<br>
+        <button id="button" onclick="changeColor()">Change color</button>
+    </div>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">login</a>
+{% endif %}
+
 
 {% endblock content %}
 
